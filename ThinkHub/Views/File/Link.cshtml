@@ -1,0 +1,55 @@
+﻿@{
+	ViewData["Title"] = "Link";
+	Layout = null;
+	switch (ViewData["success"])
+	{
+		case "SUCCESS":
+		{
+			<script>
+				alert("공유 폴더가 추가되었습니다.");
+				window.location.href = "@Url.Action("Explorer", "File")";
+			</script>
+			break;
+		}
+		case "NOT_LOGGEDIN":
+		{
+			<script>
+				alert("로그인이 필요한 서비스입니다.");
+				window.location.href = "@Url.Action("Login", "User")";
+			</script>
+			break;
+		}
+		case "ACCESS_DENIED":
+		{
+			<script>
+				alert("등록되지 않은 사용자입니다.");
+				window.location.href = "@Url.Action("Explorer", "File")";
+			</script>
+			break;
+		}
+		case "FOLDER_OWNER":
+		{
+			<script>
+				alert("공유 폴더의 소유자입니다.");
+				window.location.href = "@Url.Action("Explorer", "File")";
+			</script>
+			break;
+		}
+		case "NO_SUCH_DIRECTORY":
+		{
+			<script>
+				alert("존재하지 않거나 삭제된 경로입니다.");
+				window.location.href = "@Url.Action("Explorer", "File")";
+			</script>
+			break;
+		}
+		case "ALREADY_EXISTS":
+		{
+			<script>
+				alert("이미 등록된 공유 폴더입니다.");
+				window.location.href = "@Url.Action("Explorer", "File")";
+			</script>
+			break;
+		}
+	}
+}

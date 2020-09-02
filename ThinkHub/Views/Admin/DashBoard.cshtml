@@ -1,0 +1,66 @@
+﻿@model ThinkHub.Models.User
+@{
+    ViewData["Title"] = "DashBoard";
+}
+
+<div id="DashBoard" class="container-fluid">
+	<div class="row">
+		<div class="section col-md-6 col-xl-4">
+			<div id="CpuUsage" class="card-item">
+				<span class="item-title">CPU</span>
+				<canvas id="Cpu" class="item-body"></canvas>
+			</div>
+		</div>
+		<div class="section col-md-6 col-xl-4">
+			<div id="MemoryUsage" class="card-item">
+				<span class="item-title">메모리</span>
+				<canvas id="Memory" class="item-body"></canvas>
+			</div>
+		</div>
+		<div class="section col-md-6 col-xl-4">
+			<div id="DiskUsage" class="card-item">
+				<span class="item-title">디스크 (MB/s)</span>
+				<canvas id="Disk" class="item-body"></canvas>
+			</div>
+		</div>
+		<div class="section col-md-6 col-xl-4">
+			<div id="NetworkUsage" class="card-item">
+				<span class="item-title">네트워크 (KB/s)</span>
+				<canvas id="Network" class="item-body"></canvas>
+			</div>
+		</div>
+		<div class="section col-md-6 col-xl-4">
+			<div id="ConnectedUser" class="card-item">
+				<span class="item-title">접속 중인 사용자</span>
+				<canvas id="User" class="item-body"></canvas>
+			</div>
+		</div>
+		<div class="section col-md-6 col-xl-4">
+			<div id="DiskCapacity" class="card-item">
+				<span class="item-title">저장소</span>
+				<canvas id="Capacity" class="item-body"></canvas>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="section col-md-6">
+			<div id="LogViewer" class="card-item">
+				<span class="item-title">시스템 로그</span>
+				<div id="Log" class="item-body">
+
+				</div>
+			</div>
+		</div>
+		<div class="section col-md-6">
+			<div id="UserManager" class="card-item">
+				<span class="item-title">사용자 관리 콘솔</span>
+				<div id="User" class="item-body">
+					<button class="btn conf-btn">
+						<span class="fas fa-user-cog fa-8x conf-btn-icon"></span>
+						<span class="conf-btn-text">관리콘솔로 가기</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

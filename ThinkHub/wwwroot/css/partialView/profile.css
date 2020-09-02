@@ -1,0 +1,78 @@
+﻿#ProfileForm
+{
+	position: fixed;
+	order: 1;
+	display: flex;
+	flex-flow: column;
+	width: 80%;
+	height: 80%;
+	min-width: 320px;
+	min-height: 320px;
+	max-width: 480px;
+	max-height: 480px;
+	padding: 20px;
+	border-radius: 30px 30px;
+	background: #FCFCFC;
+	-webkit-box-shadow: 3px 3px 10px #13131355;
+	-moz-box-shadow: 3px 3px 10px #13131355;
+	box-shadow: 3px 3px 10px rgba(19, 19, 19, 0.33);
+	overflow-y: auto;
+}
+#ProfileForm::-webkit-scrollbar
+{
+	width: 0%;
+}
+#ProfileForm::before, #ProfileForm::after
+{
+	content: '';
+	flex: 1;
+}
+.form-group label
+{
+	margin-bottom: 5px;
+}
+.form-group .form-control
+{
+	height: 40px;
+	border-radius: 15px 15px;
+}
+.form-group .custom-file .custom-file-label
+{
+	height: 40px;
+	border-radius: 15px 15px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.custom-file-input ~ .custom-file-label::after
+{
+	content: "파일 선택";
+	height: 40px;
+	border-radius: 15px 15px;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+.btn
+{
+	border-radius: 15px 15px;
+	width: 100%;
+	height: 40px;
+}
+.btn:disabled
+{
+	background: #CCCCCC;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-weight: bold;
+	color: #777777;
+}
+.btn:enabled
+{
+	background: #0597F2;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: #EFEFEF;
+	transition: all 0.3s;
+}
+.btn:enabled:hover
+{
+	background: #18B6DE;
+}

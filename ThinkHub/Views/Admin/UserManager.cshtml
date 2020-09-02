@@ -1,0 +1,166 @@
+﻿@{
+	ViewData["Title"] = "UserManager";
+}
+
+<div id="UserManager" class="container-fluid">
+	<div class="row">
+		<div class="section col-xs-12 col-md-6 col-xl-3">
+			<div class="card-item">
+				<span class="item-title">사용자 추가</span>
+				<div class="item-body">
+					<div class="form-group">
+						<label>아이디</label>
+						<input id="UserName" type="text" class="form-control has-success" placeholder="아이디 입력 (8자리 이상)" autocomplete="new-password" />
+					</div>
+					<div class="form-group">
+						<label>이메일 주소</label>
+						<input id="Email" type="email" class="form-control" placeholder="이메일 주소" autocomplete="new-password" />
+					</div>
+					<div class="form-group">
+						<label>비밀번호</label>
+						<input id="Password" type="password" class="form-control" placeholder="비밀번호" autocomplete="new-password" />
+					</div>
+					<div class="form-group">
+						<label>비밀번호 확인</label>
+						<input id="ConfirmPassword" type="password" class="form-control" placeholder="비밀번호 확인" autocomplete="new-password" />
+					</div>
+					<div class="form-group">
+						<label>이름</label>
+						<input id="Name" type="text" class="form-control" placeholder="이름 (실명 입력)" autocomplete="new-password" />
+					</div>
+					<div class="form-group">
+						<label>생년월일</label>
+						<input id="Birthday" type="date" class="form-control" placeholder="생년월일" autocomplete="new-password" />
+					</div>
+					<div class="form-group">
+						<label>휴대전화번호</label>
+						<input id="Phone" type="text" class="form-control" placeholder="휴대전화번호 ('-' 제외)" autocomplete="new-password" />
+					</div>
+					<div class="form-group">
+						<button id="Register" type="submit" class="btn btn-control" disabled>회원가입</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section col-xs-12 col-md-6 col-xl-3">
+			<div class="card-item">
+				<span class="item-title">엑셀 자동화</span>
+				<div class="item-body">
+					<div class="form-group">
+						<label>사용자 정보</label>
+						<div class="custom-file">
+							<input id="Image" type="file" class="custom-file-input" accept=".xlsx, .csv, .json" />
+							<label class="custom-file-label" for="Image">선택된 파일 없음</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<button id="Upload" type="submit" class="btn btn-control" disabled>업로드</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section col-xs-12 col-xl-6">
+			<div id="UserList" class="card-item">
+				<span class="item-title">사용자 목록</span>
+				<div class="item-body">
+					<div class="control-area-top">
+						<button class="btn btn-control">
+							<span class="btn-icon far fa-check-square"></span>
+							<span class="btn-text">전체선택</span>
+						</button>
+						<button class="btn btn-control">
+							<span class="btn-icon fas fa-trash-alt"></span>
+							<span class="btn-text">선택삭제</span>
+						</button>
+					</div>
+					<div class="search-area">
+						<input type="text" class="form-control" placeholder="사용자 검색" />
+						<button class="btn btn-control">
+							<span class="btn-icon fa fa-search"></span>
+						</button>
+					</div>
+					<div class="table-wrapper">
+						<table class="table table-borderless">
+							<thead>
+								<tr>
+									<th class="th-sticky">
+										<span class="table-title">
+											선택
+										</span>
+									</th>
+									<th class="th-sticky">
+										<span class="table-title">
+											아이디
+										</span>
+									</th>
+									<th class="th-sticky d-none d-md-table-cell">
+										<span class="table-title">
+											이메일
+										</span>
+									</th>
+									<th class="th-sticky d-none d-sm-table-cell">
+										<span class="table-title">
+											이름
+										</span>
+									</th>
+									<th class="th-sticky">
+										<span class="table-title">
+											역할
+										</span>
+									</th>
+									<th class="th-sticky">
+										<span class="table-title">
+											삭제
+										</span>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								@for (int i = 0; i < 20; i++)
+								{
+									<tr>
+										<td>
+											<div class="table-content form-group custom-control custom-checkbox">
+												<input id="select-@i" type="checkbox" class="custom-control-input" />
+												<label class="custom-control-label" for="select-@i"></label>
+											</div>
+										</td>
+										<td>
+											<span class="table-content">E5presso</span>
+										</td>
+										<td class="d-none d-md-table-cell">
+											<input type="text" class="table-content form-control" value="sejong418@icloud.com" />
+										</td>
+										<td class="d-none d-sm-table-cell">
+											<input type="text" class="table-content form-control" value="백세종" />
+										</td>
+										<td>
+											<select class="custom-select">
+												<option>Administrators</option>
+												<option>Users</option>
+												<option>Guests</option>
+											</select>
+										</td>
+										<td>
+											<button class="delete-btn">
+												<span class="fa fa-times delete-btn-icon"></span>
+											</button>
+										</td>
+									</tr>
+								}
+							</tbody>
+						</table>
+					</div>
+					<div class="control-area-bottom">
+						<button class="btn btn-control">
+							<span class="btn-text">적용</span>
+						</button>
+						<button class="btn btn-control">
+							<span class="btn-text">취소</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

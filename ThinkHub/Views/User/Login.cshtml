@@ -1,0 +1,26 @@
+﻿@{
+	ViewData["Title"] = "Login";
+	string Link = @Context.Session.GetString("LINK_URL");
+	Context.Session.Remove("LINK_URL");
+}
+<input type="hidden" id="LINK_URL" , value="@Link" />
+<div id="Curtain">
+	<div id="Loading">
+		<span id="loading-icon" class="fa fa-circle-notch fa-spin"></span>
+		<span id="loading-message">요청을 처리 중입니다.</span>
+	</div>
+</div>
+<form id="LoginForm">
+	<div class="form-group">
+		<label>아이디 또는 이메일</label>
+		<input id="UserName" type="text" class="form-control" placeholder="아이디 또는 이메일" />
+	</div>
+	<div class="form-group">
+		<label>비밀번호</label>
+		<input id="Password" type="password" class="form-control" placeholder="비밀번호" />
+	</div>
+	<button id="Login" type="submit" class="btn" disabled>로그인</button>
+	<a class="form-group" href="/User/ForgotPassword">
+		<span class="form-link">비밀번호를 잊으셨나요?</span>
+	</a>
+</form>

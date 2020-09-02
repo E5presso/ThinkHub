@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkHub", "ThinkHub\ThinkHub.csproj", "{AFCAD702-88A6-4977-B213-BB1590D926ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{CC2AFD18-E95B-4D02-AF88-FC797BF08DB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middleware", "Middleware\Middleware.csproj", "{08147924-E5B9-4046-BFE3-57017C01F7B1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFCAD702-88A6-4977-B213-BB1590D926ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFCAD702-88A6-4977-B213-BB1590D926ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFCAD702-88A6-4977-B213-BB1590D926ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFCAD702-88A6-4977-B213-BB1590D926ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC2AFD18-E95B-4D02-AF88-FC797BF08DB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC2AFD18-E95B-4D02-AF88-FC797BF08DB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC2AFD18-E95B-4D02-AF88-FC797BF08DB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC2AFD18-E95B-4D02-AF88-FC797BF08DB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08147924-E5B9-4046-BFE3-57017C01F7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08147924-E5B9-4046-BFE3-57017C01F7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08147924-E5B9-4046-BFE3-57017C01F7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08147924-E5B9-4046-BFE3-57017C01F7B1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6DAB18CC-151A-4721-8659-293AFCB9F90C}
+	EndGlobalSection
+EndGlobal

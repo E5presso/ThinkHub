@@ -1,0 +1,267 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+
+#UserManager
+{
+	z-index: 2;
+	position: fixed;
+	background: #FCFCFC;
+	width: 100%;
+	padding: 20px;
+	overflow-y: auto;
+}
+
+.section
+{
+	padding: 10px;
+}
+
+.card-item
+{
+	width: 100%;
+	height: 500px;
+	padding: 10px;
+	background: #FCFCFC;
+	border-radius: 30px;
+	-webkit-box-shadow: 3px 3px 10px #13131355;
+	-moz-box-shadow: 3px 3px 10px #13131355;
+	box-shadow: 3px 3px 10px rgba(19, 19, 19, 0.33);
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+.item-title
+{
+	width: 100%;
+	height: 10%;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1.4rem;
+	font-weight: bold;
+	color: #777777;
+	text-align: center;
+}
+.item-body
+{
+	width: 100%;
+	height: 90%;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.item-body::before, .item-body::after
+{
+	content: '';
+	flex: 1;
+}
+
+.form-group
+{
+	width: 100%;
+	padding: 0;
+	margin-bottom: 10px;
+}
+.custom-file-label, .custom-file-label::after
+{
+	border-radius: 15px;
+}
+.form-group .btn-control
+{
+	width: 100%;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+.form-group label
+{
+	font-family: 'Nanum Gothic', sans-serif;
+	margin-bottom: 5px;
+}
+.form-control
+{
+	border-radius: 15px;
+	box-sizing: border-box;
+}
+.custom-select
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 15px;
+}
+.btn
+{
+	font-family: 'Nanum Gothic', sans-serif;
+	border-radius: 15px 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn:disabled
+{
+	background: #CCCCCC;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-weight: bold;
+	color: #777777;
+}
+.btn:enabled
+{
+	background: #0597F2;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: #EFEFEF;
+	transition: all 0.3s;
+}
+.btn:enabled:hover
+{
+	background: #18B6DE;
+}
+.group
+{
+	display: flex;
+	flex-flow: row nowrap;
+}
+.control-area-top
+{
+	width: 100%;
+	height: 10%;
+	display: flex;
+	flex-flow: row;
+	justify-content: flex-end;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.search-area
+{
+	width: 100%;
+	height: 10%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.search-area .form-control
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 15px 0 0 15px;
+}
+.search-area .btn-control
+{
+	width: 50px;
+	height: 100%;
+	border-radius: 0 15px 15px 0;
+}
+.control-area-bottom
+{
+	width: 100%;
+	height: 10%;
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.custom-control-label::before, .custom-control-label::after
+{
+	width: 1.5rem;
+	height: 1.5rem;
+	top: -0.6rem;
+	left: -0.75rem;
+}
+.control-area-top .btn-control
+{
+	width: 120px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 10px;
+}
+.btn-icon
+{
+	font-size: 1.4rem;
+}
+.btn-text
+{
+	font-family: 'Nanum Gothic', sans-serif;
+}
+.control-area-bottom .btn-control
+{
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.control-area-bottom .btn-control:nth-child(2)
+{
+	margin-left: 10px;
+}
+.table-wrapper
+{
+	width: 100%;
+	height: 70%;
+	margin-bottom: 10px;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+.table
+{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	overflow-y: auto;
+}
+td
+{
+	padding: 0.5rem !important;
+}
+th
+{
+	font-size: 1.1rem;
+	font-weight: bold;
+	color: #777777;
+	background: #FCFCFC;
+	z-index: 1;
+}
+.th-sticky
+{
+	position: sticky;
+	top: 0;
+}
+.table-title
+{
+	width: 100%;
+	height: 100%;
+	font-family: 'Nanum Gothic', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	white-space: nowrap;
+}
+.table-content
+{
+	width: 100%;
+	height: 100%;
+	font-family: 'Nanum Gothic', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.delete-btn
+{
+	border: none;
+	background: none;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.delete-btn-icon
+{
+	color: #BF0404;
+	font-size: 1.2rem;
+}

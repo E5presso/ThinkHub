@@ -1,0 +1,150 @@
+﻿@using ThinkHub.Controllers;
+@{
+	ViewData["Title"] = "Explorer";
+}
+<div class="dropdown-menu" id="context-menu">
+	<div class="context-item dropdown-item" id="create-folder">새 폴더</div>
+	<div class="context-item dropdown-item" id="upload-file">파일 업로드</div>
+	<div class="context-item dropdown-item" id="refresh">새로 고침</div>
+	@if (Context.Session.GetString(Session.Clipboard.FilePath) == null)
+	{
+		<div class="context-item dropdown-item disabled" id="paste">붙여넣기</div>
+	}
+	else
+	{
+		<div class="context-item dropdown-item" id="paste">붙여넣기</div>
+	}
+	<input type="hidden" id="selected-path" />
+</div>
+<div class="dropdown-menu" id="file-context-menu">
+	<div class="context-item dropdown-item" id="share">폴더 공유</div>
+	<div class="context-item dropdown-item" id="code">공유 코드</div>
+	<div class="context-item dropdown-item" id="manage">공유 설정</div>
+	<div class="context-item dropdown-item" id="unshare">공유 해제</div>
+	<div class="context-item dropdown-item" id="unlink">링크 해제</div>
+	<div class="context-item dropdown-item" id="preview">미리보기</div>
+	<div class="context-item dropdown-item" id="download">다운로드</div>
+	<div class="context-item dropdown-item" id="lock">파일 잠금</div>
+	<div class="context-item dropdown-item" id="unlock">잠금 해제</div>
+	<div class="context-item dropdown-item" id="copy">복사</div>
+	<div class="context-item dropdown-item" id="cut">잘라내기</div>
+	<div class="context-item dropdown-item" id="rename">이름 바꾸기</div>
+	<div class="context-item dropdown-item" id="delete">삭제</div>
+	<input type="hidden" id="selected-item-path" />
+	<input type="hidden" id="selected-item-name" />
+	<input type="hidden" id="selected-item-type" />
+</div>
+<form class="upload-form" method="POST" enctype="multipart/form-data">
+	<button id="cancel" type="button" class="btn">
+		<span class="fa fa-times"></span>
+	</button>
+	<div class="form-group">
+		<div class="custom-file">
+			<input id="File" type="file" class="custom-file-input" multiple />
+			<label class="custom-file-label" for="Image">선택된 파일 없음</label>
+		</div>
+	</div>
+	<button id="upload" type="button" class="btn">업로드</button>
+</form>
+<div id="Curtain">
+	<div id="Loading">
+		<span id="loading-icon" class="fa fa-circle-notch fa-spin"></span>
+		<span id="loading-message">요청을 처리 중입니다.</span>
+	</div>
+	<div id="Progress">
+		<button class="exit-btn btn">
+			<span class="exit-btn-logo fas fa-times"></span>
+		</button>
+	</div>
+	<div id="progress-info" class="container">
+		<div id="upload-remain">남은 파일 : -</div>
+		<div id="upload-speed">전송 속도 : -KB/s</div>
+		<div id="upload-eta">남은 시간 : -초</div>
+	</div>
+	<div id="FileViewer">
+		<button class="exit-btn btn">
+			<span class="exit-btn-logo fas fa-times"></span>
+		</button>
+	</div>
+	<div id="ShareModeSelector">
+		<button class="exit-btn btn">
+			<span class="exit-btn-logo fas fa-times"></span>
+		</button>
+		<div id="SelectMode">
+			<button id="PublicMode" class="btn" type="button">
+				<span class="btn-title">공개</span>
+				<span class="btn-desc">
+					공유 코드를 통해 모든 사용자가 접근할 수 있으며,
+					읽기 권한만 가지게 됩니다.
+				</span>
+			</button>
+			<button id="PrivateMode" class="btn" type="button">
+				<span class="btn-title">비공개</span>
+				<span class="btn-desc">
+					지정한 사용자만 공유 코드를 통해 접근할 수 있으며,
+					사용자 별 권한을 설정해줄 수 있습니다.
+				</span>
+			</button>
+		</div>
+	</div>
+	<div id="ShareManager">
+		<button class="exit-btn btn">
+			<span class="exit-btn-logo fas fa-times"></span>
+		</button>
+		<div id="InnerViewer">
+			<div class="user-search-bar input-group">
+				<input type="text" class="search-text form-control" placeholder="사용자 아이디">
+				<button class="search-btn btn" type="button">
+					<span class="search-logo fa fa-plus"></span>
+				</button>
+			</div>
+			<ul class="list-group"></ul>
+			<button id="Save" type="button" class="btn">저장</button>
+		</div>
+	</div>
+	<div id="CodeViewer">
+		<button class="exit-btn btn">
+			<span class="exit-btn-logo fas fa-times"></span>
+		</button>
+		<div id="InnerViewer">
+			<div id="QRCode"></div>
+			<div id="UrlArea">
+				<input type="text" id="Url" value="" />
+				<button id="CopyUrl" class="btn" type="button">
+					<span class="fas fa-copy fa-2x"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="Guide">
+	<span class="guide-logo far fa-plus-square"></span>
+	<span id="GuideText1" class="guide-text"></span>
+	<span id="GuideText2" class="guide-text"></span>
+</div>
+<button id="upload-btn" class="btn">
+	<span class="btn-logo fas fa-cloud-upload-alt"></span>
+</button>
+<div id="PathFinder">
+	<div class="indicator-group">
+		<div class="btn-group">
+			<button id="prev" class="btn indicator-btn" disabled>
+				<span class="fas fa-arrow-left btn-icon"></span>
+			</button>
+			<button id="next" class="btn indicator-btn" disabled>
+				<span class="fas fa-arrow-right btn-icon"></span>
+			</button>
+			<button id="redo" class="btn indicator-btn">
+				<span class="fas fa-redo btn-icon"></span>
+			</button>
+		</div>
+		<ul class="indicator"></ul>
+	</div>
+	<div class="search-bar input-group">
+		<input type="text" class="search-text form-control" placeholder="검색">
+		<button class="search-btn btn" type="button">
+			<span class="search-logo fa fa-search"></span>
+		</button>
+	</div>
+</div>
+<ul id="Explorer"></ul>

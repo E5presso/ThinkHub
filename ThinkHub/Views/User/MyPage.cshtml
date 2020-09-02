@@ -1,0 +1,61 @@
+﻿@model  ThinkHub.Models.User
+@{
+	ViewData["Title"] = "MyPage";
+}
+
+<div id="Curtain">
+	<div id="Loading">
+		<span id="loading-icon" class="fa fa-circle-notch fa-spin"></span>
+		<span id="loading-message">요청을 처리 중입니다.</span>
+	</div>
+</div>
+<div id="PageContainer" class="container-fluid">
+	<div class="row">
+		<div class="section col-md-12 col-xl-3">
+			<div class="card-item" id="ProfileForm">
+				<img id="ProfileImage" src=@Context.Session.GetString(Session.UserImage)
+					 onerror="this.onerror=null; this.src='@Url.Content("~/images/user.svg")'" />
+				<span id="UserName">@Context.Session.GetString(Session.UserName)</span>
+				<button type="button" id="EditProfile" class="btn card-btn">프로필 수정</button>
+			</div>
+		</div>
+		<div class="section col-md-6 col-xl-3">
+			<div class="card-item" id="EmailForm">
+				<span class="card-title">이메일 주소 변경</span>
+				<div class="form-email">
+					<input type="email" asp-for="Email" id="Change_Email" class="form-control email-text" placeholder="이메일 주소" />
+					<button type="button" id="Change_VerifyEmail" class="btn card-btn form-control email-btn" disabled>인증</button>
+					<button type="button" id="Change_CheckVerification" class="btn card-btn form-control email-btn email-check-btn d-none">확인</button>
+					<button type="button" id="Change_Verified" class="btn card-btn form-control email-btn d-none">인증됨</button>
+				</div>
+				<button type="button" id="Change_EmailButton" class="btn card-btn" disabled>주소 변경</button>
+			</div>
+		</div>
+		<div class="section col-md-6 col-xl-3">
+			<div class="card-item" id="PasswordForm">
+				<span class="card-title">비밀번호 변경</span>
+				<div class="form-group">
+					<label>이전 비밀번호</label>
+					<input type="password" id="Change_Old_Password" class="form-control" placeholder="이전 비밀번호" autocomplete="new-password" />
+				</div>
+				<div class="form-group">
+					<label>비밀번호</label>
+					<input type="password" id="Change_Password" class="form-control" placeholder="비밀번호" autocomplete="new-password" />
+				</div>
+				<div class="form-group">
+					<label>비밀번호 확인</label>
+					<input type="password" id="Change_ConfirmPassword" class="form-control" placeholder="비밀번호 확인" autocomplete="new-password" />
+				</div>
+				<button type="button" id="Change_PasswordButton" class="btn card-btn" disabled>비밀번호 변경</button>
+			</div>
+		</div>
+		<div class="section col-md-12 col-xl-3">
+			<div class="card-item" id="DeleteForm">
+				<span class="card-title">회원 탈퇴</span>
+				<input type="text" id="Delete_UserName" class="form-control" placeholder="아이디 또는 이메일" autocomplete="new-password" />
+				<input type="password" id="Delete_Password" class="form-control" placeholder="비밀번호" autocomplete="new-password" />
+				<button type="button" id="DeleteButton" class="btn card-btn delete-btn" disabled>탈퇴</button>
+			</div>
+		</div>
+	</div>
+</div>

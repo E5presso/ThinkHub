@@ -1,0 +1,112 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+
+#DashBoard
+{
+	z-index: 2;
+	position: fixed;
+	background: #FCFCFC;
+	width: 100%;
+	padding: 20px;
+	overflow-y: auto;
+}
+
+.section
+{
+	padding: 10px;
+}
+.card-item
+{
+	width: 100%;
+	height: 380px;
+	padding: 10px;
+	background: #FCFCFC;
+	border-radius: 30px;
+	-webkit-box-shadow: 3px 3px 10px #13131355;
+	-moz-box-shadow: 3px 3px 10px #13131355;
+	box-shadow: 3px 3px 10px rgba(19, 19, 19, 0.33);
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+.item-title
+{
+	width: 100%;
+	height: 10%;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1.4rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.item-body
+{
+	width: 100%;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#CpuUsage .item-title
+{
+	color: #2795F5;
+}
+#MemoryUsage .item-title
+{
+	color: #F74840;
+}
+#DiskUsage .item-title
+{
+	color: #73C20C;
+}
+#NetworkUsage .item-title
+{
+	color: #FF7725;
+}
+#DiskCapacity .item-title
+{
+	color: #18B6DE;
+}
+#ConnectedUser .item-title
+{
+	color: #2795F5;
+}
+#UserManager .item-title
+{
+	color: #1D6EB5;
+}
+#LogViewer .item-title
+{
+	color: #777777;
+}
+
+.conf-btn
+{
+	width: 230px;
+	height: 230px;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 30px;
+	transition: filter 0.3s;
+}
+.conf-btn:hover
+{
+	filter: drop-shadow(3px 3px 2px #1313137F);
+}
+.conf-btn-icon
+{
+	color: #1D6EB5;
+}
+.conf-btn-text
+{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1.4rem;
+	font-weight: bold;
+	color: #1D6EB5;
+	width: 100%;
+	height: 20%;
+}

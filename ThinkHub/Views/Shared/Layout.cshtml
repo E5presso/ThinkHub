@@ -1,0 +1,217 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using ThinkHub.Controllers;
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thinkhub - @ViewData["Title"]</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="~/lib/fontawesome/dist/css/fontawesome.css" />
+	<link rel="stylesheet" href="~/lib/fontawesome/dist/css/all.css" />
+	<link rel="stylesheet" href="~/lib/jquery-ui/dist/css/jquery-ui.css" />
+	<link rel="stylesheet" href="~/lib/jquery-ui/dist/css/jquery-ui.structure.css" />
+	<link rel="stylesheet" href="~/lib/jquery-ui/dist/css/jquery-ui.theme.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css" />
+	<script src="~/lib/jquery/dist/jquery.js"></script>
+	<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="~/lib/fontawesome/dist/js/fontawesome.js"></script>
+	<script src="~/lib/fontawesome/dist/js/all.js"></script>
+	<script src="~/lib/hammer/dist/hammer.js"></script>
+	<script src="~/lib/jquery-hammer/dist/jquery.hammer.js"></script>
+	<script src="~/lib/jquery-ui/dist/js/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.10.0/js/md5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+
+	<link rel="stylesheet" href="~/css/layout/reset.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/layout/layout.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/layout/theme.css" asp-append-version="true" />
+	<link rel="shortcut icon" href="~/favicon/favicon.ico" />
+
+	<script src="~/lib/hammer-propagation/dist/hammer.propagation.js"></script>
+	<script src="~/lib/jquery-ui-touch/dist/jquery-ui-touch.0.2.3.js"></script>
+	<script src="~/js/layout/layout.js"></script>
+	@switch (ViewData["Title"])
+	{
+		case "Home":
+		{
+			<link rel="stylesheet" href="~/css/partialView/home.css" asp-append-version="true" />
+			<script src="~/js/partialView/home.js" asp-append-version="true"></script>
+			break;
+		}
+		case "Login":
+		{
+			<link rel="stylesheet" href="~/css/partialView/login.css" asp-append-version="true" />
+			<script src="~/js/partialView/login.js" asp-append-version="true"></script>
+			break;
+		}
+		case "ForgotPassword":
+		{
+			<link rel="stylesheet" href="~/css/partialView/forgot_password.css" asp-append-version="true" />
+			<script src="~/js/partialView/forgot_password.js" asp-append-version="true"></script>
+			break;
+		}
+		case "Register":
+		{
+			<link rel="stylesheet" href="~/css/partialView/register.css" asp-append-version="true" />
+			<script src="~/js/partialView/register.js" asp-append-version="true"></script>
+			break;
+		}
+		case "DashBoard":
+		{
+			<link rel="stylesheet" href="~/css/partialView/dashboard.css" asp-append-version="true" />
+			<script src="~/js/partialView/dashboard.js" asp-append-version="true"></script>
+			break;
+		}
+		case "UserManager":
+		{
+			<link rel="stylesheet" href="~/css/partialView/usermanager.css" asp-append-version="true" />
+			<script src="~/js/partialView/usermanager.js" asp-append-version="true"></script>
+			break;
+		}
+		case "MyPage":
+		{
+			<link rel="stylesheet" href="~/css/partialView/mypage.css" asp-append-version="true" />
+			<script src="~/js/partialView/mypage.js" asp-append-version="true"></script>
+			break;
+		}
+		case "Profile":
+		{
+			<link rel="stylesheet" href="~/css/partialView/profile.css" asp-append-version="true" />
+			<script src="~/js/partialView/profile.js" asp-append-version="true"></script>
+			break;
+		}
+		case "Explorer":
+		{
+			<link rel="stylesheet" href="~/css/partialView/explorer.css" asp-append-version="true" />
+			<script src="~/js/partialView/explorer.js" asp-append-version="true"></script>
+			break;
+		}
+	}
+</head>
+<body>
+	<div id="Container">
+		<header>
+			<nav class="gnb navbar navbar-default navbar-expand fixed-top">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="@Url.Action("Index", "Home")">
+						@if (Context.Session.GetInt32(Session.SessionID) == 0)
+						{
+							<span>ThinkHub / Admin</span>
+						}
+						else
+						{
+							<span>ThinkHub</span>
+						}
+					</a>
+					<ul class="nav navbar-nav ml-auto navbar-expand">
+						@if (Context.Session.GetInt32(Session.SessionID) == null)
+						{
+							switch (ViewData["Title"])
+							{
+								case "Home":
+								{
+									<li class="nav-item">
+										<a class="nav-link" href="@Url.Action("Register", "User")">
+											<span class="fa fa-user-plus"></span>
+											<span>회원가입</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="@Url.Action("Login", "User")">
+											<span class="fa fa-sign-in-alt"></span>
+											<span>로그인</span>
+										</a>
+									</li>
+									break;
+								}
+								case "ForgotPassword":
+								{
+									<li class="nav-item">
+										<a class="nav-link" href="@Url.Action("Register", "User")">
+											<span class="fa fa-user-plus"></span>
+											<span>회원가입</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="@Url.Action("Login", "User")">
+											<span class="fa fa-sign-in-alt"></span>
+											<span>로그인</span>
+										</a>
+									</li>
+									break;
+								}
+								case "Login":
+								{
+									<li class="nav-item">
+										<a class="nav-link" href="@Url.Action("Register", "User")">
+											<span class="fa fa-user-plus"></span>
+											<span>회원가입</span>
+										</a>
+									</li>
+									break;
+								}
+								case "Register":
+								{
+									<li class="nav-item">
+										<a class="nav-link" href="@Url.Action("Login", "User")">
+											<span class="fa fa-sign-in-alt"></span>
+											<span>로그인</span>
+										</a>
+									</li>
+									break;
+								}
+							}
+						}
+						else
+						{
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+									<img class="profile-image" src=@Context.Session.GetString(Session.UserImage)
+										 onerror="this.onerror=null; this.src='@Url.Content("~/images/user.svg")'" />
+									<span class="user-name d-none d-md-inline">@Context.Session.GetString(Session.UserName)</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right">
+									@if (Context.Session.GetInt32(Session.SessionID) != 0)
+									{
+										@switch (ViewData["Title"])
+										{
+											case "MyPage":
+											case "Profile":
+											{
+												<a class="dropdown-item" href="@Url.Action("Index", "Home")">
+													<span class="fa fa-home"></span>
+													<span>홈으로</span>
+												</a>
+												break;
+											}
+											default:
+											{
+												<a class="dropdown-item" href="@Url.Action("MyPage", "User")">
+													<span class="fa fa-user"></span>
+													<span>마이페이지</span>
+												</a>
+												break;
+											}
+										}
+									}
+									<a class="dropdown-item" href="@Url.Action("Logout", "User")">
+										<span class="fa fa-sign-out-alt"></span>
+										<span>로그아웃</span>
+									</a>
+								</div>
+							</li>
+						}
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<article>
+			@RenderBody()
+		</article>
+	</div>
+</body>
+</html>

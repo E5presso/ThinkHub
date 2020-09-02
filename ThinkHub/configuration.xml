@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<domain>https://www.thinkhub.ml/</domain>
+	<admin>
+		<username>Administrator</username>
+		<password>eSP$#418404</password>
+	</admin>
+	<ffmpeg>
+		<path>ffmpeg.exe</path>
+	</ffmpeg>
+	<masks>
+		<home>Home</home>
+		<shared>Shared</shared>
+		<upload>Upload</upload>
+	</masks>
+	<directories>
+		<root>D:\Thinkhub</root>
+		<users>D:\Thinkhub\Users\</users>
+		<temp>D:\Thinkhub\Temp\</temp>
+		<log>D:\Thinkhub\Logs\</log>
+	</directories>
+	<subdirectories>
+		<home>\home</home>
+		<upload>\upload</upload>
+	</subdirectories>
+	<email>
+		<verify>
+			<template>wwwroot\html\emailverification.html</template>
+			<title>[Thinkhub] 이메일 주소 인증</title>
+			<link>https://www.thinkhub.ml/User/VerifyEmail?Code=</link>
+			<filter>//b[@id='username']</filter>
+			<filter>//a[@id='link1']</filter>
+			<filter>//a[@id='link2']</filter>
+		</verify>
+		<reset>
+			<template>wwwroot\html\resetpassword.html</template>
+			<title>[Thinkhub] 임시 비밀번호 발급</title>
+			<filter>//b[@id='username']</filter>
+			<filter>//span[@id='password']</filter>
+		</reset>
+	</email>
+</configuration>

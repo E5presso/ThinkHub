@@ -1,0 +1,46 @@
+﻿@model ThinkHub.Models.User
+@{
+	ViewData["Title"] = "Register";
+}
+<form id="RegistrationForm" method="post" asp-controller="User" asp-action="CreateAccount">
+	<div class="form-group">
+		<label>아이디</label>
+		<input id="UserName" asp-for="UserName" type="text" class="form-control has-success" placeholder="아이디 입력 (8자리 이상)" autocomplete="new-password" />
+	</div>
+	<div class="form-group">
+		<label>이메일 주소</label>
+		<div class="form-email">
+			<input id="Email" asp-for="Email" type="email" class="form-control" placeholder="이메일 주소" autocomplete="new-password" />
+			<button id="VerifyEmail" type="button" class="btn form-control" disabled>인증</button>
+			<button id="CheckVerification" type="button" class="btn form-control email-check-btn d-none">확인</button>
+			<button id="Verified" type="button" class="btn form-control d-none">인증됨</button>
+		</div>
+	</div>
+	<div class="form-group">
+		<label>비밀번호</label>
+		<input id="Password" asp-for="Password" type="password" class="form-control" placeholder="비밀번호" autocomplete="new-password" />
+	</div>
+	<div class="form-group">
+		<label>비밀번호 확인</label>
+		<input id="ConfirmPassword" type="password" class="form-control" placeholder="비밀번호 확인" autocomplete="new-password" />
+	</div>
+	<div class="form-group">
+		<label>이름</label>
+		<input id="Name" type="text" asp-for="Profile.Name" class="form-control" placeholder="이름 (실명 입력)" autocomplete="new-password" />
+	</div>
+	<div class="form-group">
+		<label>생년월일</label>
+		<input id="Birthday" type="date" asp-for="Profile.Birthday" class="form-control" placeholder="생년월일" autocomplete="new-password" />
+	</div>
+	<div class="form-group">
+		<label>휴대전화번호</label>
+		<input id="Phone" type="text" asp-for="Profile.Phone" class="form-control" placeholder="휴대전화번호 ('-' 제외)" autocomplete="new-password" />
+	</div>
+	<div class="form-group custom-control custom-checkbox">
+		<input id="Agreement" type="checkbox" class="custom-control-input" />
+		<label class="custom-control-label" for="Agreement">이용약관에 동의합니다.</label>
+	</div>
+	<div class="form-group">
+		<button id="Register" type="submit" class="btn" disabled>회원가입</button>
+	</div>
+</form>

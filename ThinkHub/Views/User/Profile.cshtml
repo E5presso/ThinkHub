@@ -1,0 +1,26 @@
+﻿@model ThinkHub.ViewModels.ProfileVM
+@{
+	ViewData["Title"] = "Profile";
+}
+<form id="ProfileForm" method="post" enctype="multipart/form-data" asp-controller="User" asp-action="UpdateProfile">
+	<div class="form-group">
+		<label>이름</label>
+		<input id="Name" asp-for="Name" type="text" class="form-control has-success" placeholder="이름" />
+	</div>
+	<div class="form-group">
+		<label>생년월일</label>
+		<input id="Birthday" asp-for="Birthday" type="date" class="form-control has-success" placeholder="생년월일" />
+	</div>
+	<div class="form-group">
+		<label>휴대폰 번호</label>
+		<input id="Phone" asp-for="Phone" type="text" class="form-control has-success" placeholder="휴대폰 번호" />
+	</div>
+	<div class="form-group">
+		<label>프로필 사진</label>
+		<div class="custom-file">
+			<input id="Image" asp-for="Image" type="file" class="custom-file-input" accept=".jpg" />
+			<label class="custom-file-label" for="Image">선택된 파일 없음</label>
+		</div>
+	</div>
+	<button id="Update" type="submit" class="btn">프로필 수정</button>
+</form>

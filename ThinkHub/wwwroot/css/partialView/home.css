@@ -1,0 +1,146 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+
+#Intro1-Service
+{
+	order: 1;
+	width: 100%;
+	height: 600px;
+	background-image: url("../../images/intro1-service.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+#Intro1-Service .TintedLayer
+{
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(19, 19, 19, 0.66);
+	transition: all 0.3s;
+}
+#Intro1-Service .TintedLayer:hover
+{
+	background-color: rgba(19, 19, 19, 0.33);
+}
+#Intro1-Service .TintedLayer p:nth-child(1)
+{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-weight: bold;
+	font-size: 2.6rem;
+	text-align: center;
+	color: #FFFFFF;
+	white-space: pre-line;
+	margin-bottom: 20px;
+}
+#Intro1-Service .TintedLayer p:nth-child(2)
+{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1.2rem;
+	text-align: center;
+	line-height: 25px;
+	color: #FFFFFF;
+	white-space: nowrap;
+	margin-bottom: 20px;
+}
+#Intro1-Service .TintedLayer .btn
+{
+	background: #AACC00;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-weight: bold;
+	color: #FFFFFF;
+	transition: all 0.3s;
+}
+#Intro1-Service .btn:hover
+{
+	color: #777777;
+}
+
+#Intro2-Share
+{
+	order: 2;
+	width: 100%;
+	height: 600px;
+	background-image: url("../../images/intro2-share.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+#Intro2-Share .TintedLayer
+{
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(19, 19, 19, 0.66);
+	transition: all 0.3s;
+}
+#Intro2-Share .TintedLayer:hover
+{
+	background-color: rgba(19, 19, 19, 0.33);
+}
+#Intro2-Share .TintedLayer p:nth-child(1)
+{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-weight: bold;
+	font-size: 2.6rem;
+	text-align: center;
+	color: #FFFFFF;
+	white-space: pre-line;
+	margin-bottom: 20px;
+}
+#Intro2-Share .TintedLayer p:nth-child(2)
+{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1.2rem;
+	text-align: center;
+	line-height: 25px;
+	color: #FFFFFF;
+	white-space: nowrap;
+}
+
+#Intro3-Security
+{
+	order: 3;
+	width: 100%;
+	height: 600px;
+	background-image: url("../../images/intro3-security.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+#Intro3-Security .TintedLayer
+{
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(19, 19, 19, 0.86);
+	transition: all 0.3s;
+}
+#Intro3-Security .TintedLayer:hover
+{
+	background-color: rgba(19, 19, 19, 0.66);
+}
+#Intro3-Security .TintedLayer p:nth-child(1)
+{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-weight: bold;
+	font-size: 2.6rem;
+	text-align: center;
+	color: #FFFFFF;
+	white-space: pre-line;
+	margin-bottom: 20px;
+}
+#Intro3-Security .TintedLayer p:nth-child(2)
+{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1.2rem;
+	text-align: center;
+	line-height: 25px;
+	color: #FFFFFF;
+	white-space: nowrap;
+}

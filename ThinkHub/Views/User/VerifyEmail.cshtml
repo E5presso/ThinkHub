@@ -1,0 +1,18 @@
+﻿@{
+	ViewData["Title"] = "VerifyEmail";
+	Layout = null;
+	if (ViewBag.Result == true)
+	{
+		<script>
+			alert("이메일 인증에 성공하였습니다.");
+			window.top.close();
+		</script>
+	}
+	else
+	{
+		<script>
+			alert("유효하지 않거나 만료된 링크입니다.");
+			window.top.close();
+		</script>
+	}
+}
